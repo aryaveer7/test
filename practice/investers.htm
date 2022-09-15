@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+</html>
+<script>
+    let mentors = [
+        {
+            image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            name:"mantu putar",
+            logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+
+        },
+        {
+            image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+            name:"pintu putar",
+            logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+
+        },
+        {
+            
+            image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+            name:"pinku putar",
+            logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png",
+
+        },
+        {
+            image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            name:"chintu putar",
+            logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+          
+        },
+    ]
+let container = document.createElement("div");
+
+    mentors.map(function(elem){
+let div = document.createElement("div");
+let img = document.createElement("img");
+img.setAttribute("src",elem.image);
+let h3 = document.createElement("h3");
+h3.innerText= elem.name;
+let logo = document.createElement("img");
+logo.setAttribute("src",elem.logo);
+logo.style.width="100%";
+
+div.append(img,h3,logo);
+
+div.style.textAlign="center";
+div.style.margin="auto";
+div.style.height="auto";
+div.style.width="auto";
+img.style.width="100%";
+logo.style.width="100%";
+container.append(div);
+
+
+    })
+
+    document.querySelector("body").append(container);
+    container.style.display="flex"
+    container.style.gap="10px";
+    
+    container.style.border="1px solid red"
+    container.style.height="auto";
+</script>

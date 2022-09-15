@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <label for="">Enter Task Name</label>
+            <input type="text" placeholder="Enter Task" id="task">
+            <br>
+            <label for="">Choose Priority</label>
+            <select name="" id="priority">
+                <option value="">Choose Priority</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+
+            </select>
+            <input type="submit" value="Enter">
+
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Priority</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+
+    dataArr=[];
+    document.querySelector("form").addEventListener("submit",function(){
+        event.preventDefault();
+        let task = document.querySelector("#task").value;
+        let priority= document.querySelector("#priority").value;
+        let dataObj = {
+            taskName:task,priority:priority
+        }
+      dataArr.push(dataObj);
+        display(dataArr);
+    })
+function display(dataArr){
+    document.querySelector("tbody").innerHTML="";
+    dataArr.map(function(elem){
+    
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerText=elem.taskName;
+        let td2 = document.createElement("td");
+        td2.innerText=elem.priority;
+        if(td2.innerText=="High"){
+            td2.style.backgroundColor="red";
+        }else{
+            td2.style.backgroundColor="green";
+        }
+
+        let td3 = document.createElement("td");
+        td3.textContent="Delete";
+        td3.style.color="red";
+        td3.addEventListener("click",function(){
+            event.target.parentNode.remove();
+        })
+        tr.append(td1,td2,td3);
+        document.querySelector("tbody").append(tr);
+    });
+}
+</script>
+

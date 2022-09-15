@@ -1,0 +1,50 @@
+
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 40px;
+    margin: center;
+
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 10px;
+    background: #888;
+    width: auto;
+    color:aqua;
+
+}
+
+
+form{
+    display: flex;
+flex-wrap: wrap;
+gap: 3px;
+
+}
+form input, form select{
+    text-align: center;
+}
+
+table{
+    margin: auto;
+}
+
+  tr{
+    display:flex;
+    
+    
+    gap: 20px;
+    padding: 4px;
+    
+}
+
+td{
+
+}

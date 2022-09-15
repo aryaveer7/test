@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let div = document.createElement("div");
+    div.setAttribute("class","flex");
+    let data = [
+{name:"primary",color:"blue"},
+{name:"secendary",color:"green"},
+{name:"third",color:"yellow"},
+{name:"four",color:"pink"},
+{name:"fifth",color:"teal"},
+{name:"sixth",color:"blue"},
+{name:"seventh",color:"green"},
+{name:"eighth",color:"yellow"},
+    ]
+
+    data.map(function(el){
+        let button = document.createElement("button");
+        button.innerText=el.name;
+        button.style.backgroundColor=el.color;
+        button.style.padding="8px 10px";
+        div.append(button);
+
+    })
+   
+    div.style.display="flex";
+    div.style.gap="10px";
+  
+    document.querySelector("body").append(div);
+
+</script>

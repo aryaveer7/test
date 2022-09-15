@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form action="">
+    <input type="text" placeholder="Enter_Email" class="email">
+    <br>
+    <input type="number" placeholder="Enter_Number" class="number">
+     <input type="submit" value="Login">
+</form>
+<h1 class="Ndisplay">display name here</h1>
+<h2 class="Edisplay">display email here</h2>
+</body>
+</html>
+
+<script>
+let display1 = document.querySelector("h1");
+let display2 = document.querySelector("h2");
+
+document.querySelector("form").addEventListener("submit",function(){
+    event.preventDefault();
+    let email = document.querySelector(".email").value;
+    let number = document.querySelector(".number").value;
+    display1.innerText=email;
+    display2.innerText=number;
+    
+})
+
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-111 C2</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(250, 250, 250);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Add new Product</h1>
+      <form>
+        <input placeholder="Name" type="text" id="name" />
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Food">Food</option>
+        </select>
+        <select id="listed">
+          <option value="">Select Listed Site</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Flipkart">Flipkart</option>
+          <option value="Nykaa">Nykaa</option>
+        </select>
+        <input placeholder="Price" type="number" id="price" />
+        <input placeholder="Listing Date" type="date" id="addDate" />
+        <input placeholder="Has Sold" type="number" id="sold" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <input placeholder="Search" type="text" id="search" />
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Listed Site</th>
+          <th>Price</th>
+          <th>Listing Date</th>
+          <th>Sold Number</th>
+          <th>Total Revenue</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- all the data should be appended here  -->
+      </tbody>
+    </table>
+  </body>
+</html>

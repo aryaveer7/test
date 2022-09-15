@@ -1,0 +1,16 @@
+/* Write all the necessery css  */
+
+tbody>tr>td:last-child{
+    cursor: pointer;
+}
+
+td{
+    border: 1px solid black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}

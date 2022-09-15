@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            text-align: center;
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2f2f9f;
+        }
+
+        .calculator{
+            height: 500px;
+            width: 400px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 30px;
+            
+        }
+
+        .display{
+            height: 60px;
+            width: 90%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: auto;
+            border-radius: 10px;
+            border: 1px solid red;
+        }
+
+        .keyboard{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+grid-template-rows: repeat(4,80px);
+gap: 10px;
+margin-top: 20px;
+        }
+.keyboard>div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+}
+
+.keyboard>div:hover{
+    background-color:teal;
+    color: white;
+}
+.bl{
+    background-color: black;
+    color: white;
+}
+.or{
+    background-color: red;
+    color: white;
+}
+
+.display{
+    font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div class="calculator">
+        <div class="display">
+
+        </div>
+        <div class="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="bl">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="bl">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="bl">*</div>
+            <div class="or">C</div>
+            <div>0</div>
+            <div class="bl">=</div>
+            <div class="bl">/</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let keys = document.querySelectorAll(".keyboard>div");
+    console.log(keys);
+    let display = document.querySelector(".display");
+    let bag = "";
+    for(let i=0;i<keys.length;i++){
+        keys[i].addEventListener("click",function(){
+            let x = event.target.innerText;
+
+            if(x=="C"){
+                bag="";
+                display.innerText=bag;
+            }else if(x=="="){
+let ans = eval(bag);
+if(ans == undefined){
+    display.innerText= "";
+}else{
+    display.innerText=ans;
+}
+            }else{
+                bag+=x;
+                display.innerText=bag;
+            }
+        })
+    }
+
+</script>

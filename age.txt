@@ -1,2 +1,0 @@
-Manoranjan jena
-age = 28
