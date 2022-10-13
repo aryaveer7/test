@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="filter">
+        <option value="select">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <div class="container"></div>
+</body>
+</html>
+
+<script>
+let filter = document.getElementById("filter");
+let container = document.querySelector(".container");
+let data = [1,2,3,4,5,2,1,4,5,3,2,1,4];
+
+function Display(data){
+data.forEach(function(el){
+let h1 = document.createElement("h1");
+h1.innerText=el;
+container.append(h1);
+})
+}
+
+Display(data);
+
+
+filter.addEventListener("change",function(){
+    container.innerHTML=null;
+    let x = filter.value;
+
+    if(x == "select"){
+        Display(data);
+    }else{
+ let newData = data.filter(function(el){
+    return el == x;
+})
+
+Display(newData);
+
+
+    }
+
+})
+</script>

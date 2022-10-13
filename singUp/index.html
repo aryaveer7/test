@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+   <style>
+  #container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 20px;
+  }
+   #container>div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 15px 35px;
+    text-align: center;
+   
+display: grid;
+
+
+   }
+
+    #container>div>img{
+      
+        width: 200px;
+        height: 300px;
+    }
+
+   button{
+    
+    align-self: flex-end;
+   }
+
+    button:hover{
+        cursor: pointer;
+        background: #8ba78b;
+    }
+   </style>
+    
+</head>
+<body>
+    <h1>Home Page</h1>
+    <nav>
+       <a href="./singup.html">SingUp</a>
+       <a href="./singin.html">Singin</a>
+    </nav>
+    <select name="" id="filter">
+        <option value="">Select Catagory</option>
+        <option value="casual">Casual</option>
+        <option value="formal">formal</option>
+        <option value="party">party</option>
+        
+    </select>
+   <div id="container"></div>
+</body>
+</html>
+
+<script>
+    let product_data = [
+    {
+        brand:"puma",
+        name:"selena floral fileList",
+        price:"2000",
+        size:"X,XX,XXL",
+        productID:"women1",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/61iq2w58a6L._UY575_.jpg",
+    },
+        {
+        brand:"puma",
+        name:"selena floral fileList",
+        price:"200",
+        size:"X,XX,XXL",
+        productID:"women2",
+        catagory:"party",
+        img:"https://m.media-amazon.com/images/I/51lLCor8q2L._AC_UL320_.jpg",
+    },
+        {
+        brand:"peterengland",
+        name:"Peter England Men Jeans",
+        price:"2499",
+        size:"X,XX,XXL",
+        productID:"men1",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/61HyUonxgnL._UY550_.jpg",
+    },
+        {
+        brand:"peterengland",
+        name:"Men's Slim Work Utility Pants",
+        price:"1222",
+        size:"X,XX,XXL",
+        productID:"men2",
+        catagory:"formal",
+        img:"https://m.media-amazon.com/images/I/51Qun3AsGhL._AC_UL320_.jpg",
+
+        },
+            {
+        brand:"peterengland",
+        name:"Men's Regular Fit Polyester Blend Pants",
+        price:"4999",
+        size:"X,XX,XXL",
+        productID:"men3",
+        catagory:"formal",
+        img:"https://m.media-amazon.com/images/I/61wlXbqI5BL._AC_UL320_.jpg",
+    },
+            {
+        brand:"allensolly",
+        name:"NAINVISH",
+        price:"495",
+        size:"X,XX,XXL",
+        productID:"women3",
+        catagory:"party",
+        img:"https://m.media-amazon.com/images/I/81kcW2obzqL._AC_UL320_.jpg",
+    },
+        {
+        brand:"puma",
+        name:"NEEMIYA",
+        price:"1894",
+        size:"X,XX,XXL",
+        productID:"men4",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/7145uBtiKjL._AC_UL320_.jpg",
+    
+    },
+        {
+        brand:"allensolly",
+        name:"Women's Anarkali Kurta",
+        price:"499",
+        size:"X,XX,XXL",
+        productID:"women4",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/71b1oU6ACxL._AC_UL320_.jpg",
+    },
+        {
+        brand:"reymond",
+        name:"Hemnir",
+        price:"567",
+        size:"X,XX,XXL",
+        productID:"women5",
+        catagory:"formal",
+        img:"https://m.media-amazon.com/images/I/61Lmsgoe-eS._AC_UL320_.jpg",
+    },
+        {
+        brand:"reymond",
+        name:"Generic",
+        price:"1240",
+        size:"X,XX,XXL",
+        productID:"women1",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/41ogHxPrz1S._AC_UL320_.jpg",
+    },
+        {
+        brand:"killer",
+        name:"ajdanjee",
+        price:"5000",
+        size:"X,XX,XXL",
+        productID:"men5",
+        catagory:"party",
+        img:"https://images-eu.ssl-images-amazon.com/images/I/61oKgWTrxjL._AC._SR360,460.jpg",
+    },
+        {
+        brand:"reebok",
+        name:"kalahari",
+        price:"3993",
+        size:"X,XX,XXL",
+        productID:"men6",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/81eNprKPlZL._AC_UL320_.jpg",
+    },
+
+
+
+    {
+        brand:"puma",
+        name:"shose",
+        price:"899",
+        size:"X,XX,XXL",
+        productID:"women6",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/81RR0c6nJrL._SX500._SX._UX._SY._UY_.jpg",
+    },
+        {
+        brand:"puma",
+        name:"selena floral fileList",
+        price:"2000",
+        size:"X,XX,XXL",
+        productID:"women7",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/51lLCor8q2L._AC_UL320_.jpg",
+    },
+        {
+        brand:"peterengland",
+        name:"Peter England Men Jeans",
+        price:"2499",
+        size:"X,XX,XXL",
+        productID:"men7",
+        catagory:"party",
+        img:"https://m.media-amazon.com/images/I/61HyUonxgnL._UY550_.jpg",
+    },
+        {
+        brand:"peterengland",
+        name:"Men's Slim Work Utility Pants",
+        price:"1222",
+        size:"X,XX,XXL",
+        productID:"men8",
+        catagory:"formal",
+        img:"https://m.media-amazon.com/images/I/51Qun3AsGhL._AC_UL320_.jpg",
+
+        },
+            {
+        brand:"peterengland",
+        name:"Men's Regular Fit Polyester Blend Pants",
+        price:"4999",
+        size:"X,XX,XXL",
+        productID:"men9",
+        catagory:"formal",
+        img:"https://m.media-amazon.com/images/I/61wlXbqI5BL._AC_UL320_.jpg",
+    },
+            {
+        brand:"allensolly",
+        name:"NAINVISH",
+        price:"495",
+        size:"X,XX,XXL",
+        productID:"women9",
+        catagory:"casual",
+        img:"https://m.media-amazon.com/images/I/81kcW2obzqL._AC_UL320_.jpg",
+    },
+        {
+        brand:"puma",
+        name:"NEEMIYA",
+        price:"1894",
+        size:"X,XX,XXL",
+        productID:"men10",
+        catagory:"casual",
+        img:"https://rukminim1.flixcart.com/image/309/371/xif0q/shoe/6/d/3/9-8516479-9-bata-black-original-imaghvhrwfgqnj5z.jpeg?q=50",
+    
+    },
+        {
+        brand:"killer",
+        name:"full slive shirt",
+        price:"299",
+        size:"X,XX,XXL",
+        productID:"women10",
+        catagory:"casual",
+        img:"https://rukminim1.flixcart.com/image/300/300/ky1vl3k0/shirt/u/d/g/xl-srt-001-blue-moonvelly-original-imagadh2eu6n6jbv.jpeg?q=90",
+    },
+        {
+        brand:"reymond",
+        name:"Hemnir",
+        price:"567",
+        size:"X,XX,XXL",
+        productID:"women11",
+        catagory:"formal",
+        img:"https://m.media-amazon.com/images/I/61Lmsgoe-eS._AC_UL320_.jpg",
+    },
+        {
+        brand:"reymond",
+        name:"Generic",
+        price:"666",
+        size:"X,XX,XXL",
+        productID:"men11",
+        catagory:"formal",
+        img:"https://rukminim1.flixcart.com/image/495/594/xif0q/shirt/v/h/i/-original-imaghzrtdbg7czc6.jpeg?q=50",
+    },
+        {
+        brand:"max",
+        name:"adibaa",
+        price:"500",
+        size:"X,XX,XXL",
+        productID:"men12",
+        catagory:"formal",
+        img:"https://rukminim1.flixcart.com/image/309/371/kz7bcsw0/shirt/x/k/u/3xl-ufsht0105-u-s-polo-assn-original-imagb9edt89zdgu6.jpeg?q=50",
+    },
+        {
+        brand:"max",
+        name:"kalahari",
+        price:"399",
+        size:"X,XX,XXL",
+        productID:"men13",
+        catagory:"casual",
+        img:"https://rukminim1.flixcart.com/image/495/594/xif0q/shirt/m/c/w/s-830-tigersnake-original-imaghg2ffhr36xz5.jpeg?q=50",
+    },
+
+
+
+    
+
+
+]
+</script>
+<script>
+
+    let container = document.getElementById("container");
+    let filter = document.getElementById("filter");
+    let cartLs = JSON.parse(localStorage.getItem("cart-page")) || [];
+
+
+    function Display(data){
+    container.innerHTML = null;
+  data.map(function(ele){
+let product = document.createElement("div");
+let img = document.createElement("img");
+img.src = ele.img;
+let name = document.createElement("h1");
+name.textContent = ele.name;
+
+let price = document.createElement("h2");
+price.textContent = ele.price;
+
+let catagory = document.createElement("p");
+catagory.textContent= ele.catagory;
+
+let cart = document.createElement("button");
+cart.textContent = "Add To Cart"
+cart.addEventListener("click",function(){
+AddCart(ele);
+})
+product.append(img,name,price,catagory,cart);
+container.append(product);
+  })
+}
+
+Display(product_data);
+
+
+
+filter.addEventListener("change",function(){
+if(filter.value == ""){
+Display(product_data);
+}else{
+
+    let filtered = product_data.filter(function(ele){
+       return ele.catagory === filter.value;
+    })
+
+    Display(filtered);
+
+}
+})
+
+
+function AddCart(product){
+for(let i=0;i<cartLs.length;i++){
+
+    if(cartLs[i].productID == product.productID){
+        
+        alert("Product already in the Cart");
+        return;
+    }
+}
+
+    cartLs.push(product);
+    alert("product added sucessfully");
+    localStorage.setItem("cart-page", JSON.stringify(cartLs));
+    
+}
+
+
+
+</script>
+
+<script>
+
+
+    let singinLS = JSON.parse(localStorage.getItem("singIn"))
+   let nav = document.querySelector("nav");
+
+   if(singinLS != null){
+    nav.innerHTML = null;
+
+    let username = document.createElement("h1");
+    username.innerText = singinLS.name;
+
+   let cartBtn = document.createElement("a");
+   cartBtn.href = "cart.html";
+   cartBtn.innerText = "CART";
+   nav.append(username,cartBtn);
+
+
+   }
+
+</script>

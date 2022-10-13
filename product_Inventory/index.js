@@ -17,15 +17,16 @@ dataArr.push(dataObj);
 
 // console.log(dataArr);
 
-displayTable(dataArr);
+displayTable();
+
 totalPrice=totalPrice+Number(dataObj.pPrice);
 document.querySelector("#total-price").innerText = totalPrice;
 
 })
 
-function displayTable(dataArr){
+function displayTable(){
     document.querySelector("tbody").innerHTML= "";
-    dataArr.map(function(elem){
+    dataArr.map(function(elem,index){
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
         td1.innerText=elem.pName;
@@ -35,7 +36,7 @@ function displayTable(dataArr){
         td3.innerText=elem.pBrand;
         let td4 = document.createElement("td");
         td4.innerText=elem.pPrice;
-        td4.setAttribute("id","price");
+        
         let td5 = document.createElement("td");
         td5.innerText=elem.pDeliveredBy;
         let td6 = document.createElement("td");
@@ -46,13 +47,11 @@ function displayTable(dataArr){
         }
         let td7 = document.createElement("td");
         td7.innerText="Delete";
-        td7.addEventListener("click",function(event){
-            event.target.parentNode.remove();
-            
-            
-            console.log(dataArr);
-            return null;
+        td7.addEventListener("click",function(){
+            deletArr(dataArr,index);
 
+            
+           
             totalPrice= totalPrice-Number(elem.pPrice);
             document.querySelector("#total-price").innerText = totalPrice;
         });
@@ -60,4 +59,12 @@ function displayTable(dataArr){
         document.querySelector("tbody").append(tr);
         
     })
+
+    function deletArr(arr,index){
+        dataArr = arr.filter(function(el,i){
+        return i != index;
+        })
+        console.log(dataArr);
+        displayTable(dataArr);
+    }
 }

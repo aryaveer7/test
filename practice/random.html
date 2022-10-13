@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    console.log(Math.floor(  Math.random()*1000));
+
+    async function getRandomUser(){
+        let res = await fetch ("https://randomuser.me/api/");
+        console.log(res);
+        let data = await res.json();
+        console.log(data.results[0].email);
+    }
+ getRandomUser();
+</script>

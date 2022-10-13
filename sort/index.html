@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crypto</title>
+    <style>
+        .active-btn{
+            color: black;
+            background: teal;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="sort">
+        <option value="">Sort By 24H High</option>
+        <option value="High-Low">High To Low</option>
+        <option value="Low-High">Low-High</option>
+    </select>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Current Price</th>
+            <th>Market Cap</th>
+            <th>High24</th>
+            <th>Low24</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div id="pagination"></div>
+</body>
+</html>
+<script src="./data.js"></script>
+<script src="./renderDOM.js"></script>

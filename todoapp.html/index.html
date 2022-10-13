@@ -176,6 +176,9 @@ td{
 </html>
 
 <script>
+    // let tbody = document.querySelector("tbody");
+let dataArr =  JSON.parse(localStorage.getItem("taskData")) || [] ;
+   displayTable(dataArr);
 
     document.querySelector("form").addEventListener("submit",function(){
         event.preventDefault();
@@ -185,8 +188,9 @@ td{
             priority:priority,
 
         };
-
-        displayTable(taskObj);
+        dataArr.push(taskObj);
+    localStorage.setItem("taskData",JSON.stringify(dataArr));
+        displayTable(dataArr);
         
 
 
@@ -194,36 +198,47 @@ td{
 
     })
 
-    function displayTable(taskObj){
+ 
     
+    function displayTable(data){
+        
+        document.querySelector("tbody").innerHTML = null;
+        data.map(function(ele,index){
         let tr = document.createElement("tr");
+
         let td1 = document.createElement("td");
-        td1.innerText= taskObj.taskName;
+        td1.innerText = ele.taskName;
+
+        
         let td2 = document.createElement("td");
-        td2.innerText= taskObj.priority;
-       
+        td2.innerText = ele.priority;
 
-        if(taskObj.priority=="High"){
-            td2.style.backgroundColor="red";
-            
+        if(ele.priority == "High"){
+            td2.style.background = "red";
         }else{
-            td2.style.backgroundColor="green";  
+            td2.style.background = "green"; 
         }
+
         let td3 = document.createElement("td");
-        td3.innerText= "Delete";
-        td3.addEventListener("click",deleteraw);
-        td3.style.color="red";
-        let tbody = document.querySelector("tbody");
+        td3.innerText = "Delete";
+        td3.style.color = "red";
+
         tr.append(td1,td2,td3);
-        tbody.append(tr);
+        document.querySelector("tbody").append(tr);
+        td3.addEventListener("click",function(){
+       let newData =     dleFun(index,dataArr);
 
-
-    
+        displayTable(newData);
+        })
+        })
     }
-function deleteraw(){
-    event.target.parentNode.remove();
     
-    
-}
+    function dleFun(index,dataArr){
+     
+        dataArr.splice(index,1);
+       localStorage.setItem("taskData",JSON.stringify(dataArr));
+       return dataArr;
+    }
 
+   
 </script>

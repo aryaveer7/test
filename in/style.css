@@ -1,0 +1,13 @@
+#singin_box{
+    display: none;
+}
+
+nav>div{
+    height: 20px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}

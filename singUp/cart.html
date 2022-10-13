@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <style>
+    
+
+      #container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 20px;
+  }
+   #container>div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 15px 35px;
+    text-align: center;
+   
+display: grid;
+
+
+   }
+
+    #container>div>img{
+      
+        width: 200px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>
+  <h1>Total Cart Value:- <span id="total">0</span></h1>
+<div id="container"></div>
+
+
+
+</body>
+</html>
+
+<script>
+
+
+let container = document.getElementById("container");
+let cartLS = JSON.parse( localStorage.getItem("cart-page")) || [];
+ let totalPrice = document.getElementById("total");   
+
+
+     function Display(data){
+    container.innerHTML = null;
+    let total = 0;
+  data.map(function(ele){
+   
+    total+= Number(ele.price);
+    totalPrice.innerText = total;
+let product = document.createElement("div");
+let img = document.createElement("img");
+img.src = ele.img;
+let name = document.createElement("h1");
+name.textContent = ele.name;
+
+let price = document.createElement("h2");
+price.textContent = ele.price;
+
+
+let catagory = document.createElement("p");
+catagory.textContent= ele.catagory;
+
+let deleteBtn = document.createElement("button");
+deleteBtn.textContent = "Delete";
+deleteBtn.addEventListener("click",function(){
+
+
+  DeleteCart(ele)
+})
+
+
+product.append(img,name,price,catagory,deleteBtn);
+container.append(product);
+  })
+}
+
+Display(cartLS);
+
+function DeleteCart(product){
+let filtered = cartLS.filter(function(ele){
+  return ele.productID !== product.productID;
+})
+
+cartLS = filtered;
+localStorage.setItem("cart-page",JSON.stringify(cartLS));
+if(cartLS.length == 0){
+  totalPrice.innerText = 0;
+}
+Display(cartLS);
+
+}
+</script>
